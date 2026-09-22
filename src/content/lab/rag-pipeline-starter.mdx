@@ -1,0 +1,77 @@
+---
+title: "RAG 파이프라인 처음부터 구축하기"
+description: "LangChain과 ChromaDB를 활용해 나만의 RAG 시스템을 30분 안에 만드는 실전 가이드."
+pubDate: 2026-09-16
+difficulty: "intermediate"
+tags: ["RAG", "LangChain", "VectorDB", "Python"]
+estimatedTime: "30분"
+---
+
+## RAG란?
+
+**RAG(Retrieval-Augmented Generation)**는 LLM이 외부 문서를 검색한 뒤, 그 결과를 바탕으로 답변을 생성하는 패턴입니다. 환각(hallucination)을 줄이고 최신 정보를 반영할 수 있어, 2026년 현재 엔터프라이즈 AI의 핵심 아키텍처로 자리잡았습니다.
+
+## 준비물
+
+- Python 3.11+
+- OpenAI API 키 (또는 로컬 LLM)
+- 인덱싱할 문서 (PDF, txt 등)
+
+## Step 1: 환경 설정
+
+```bash
+pip install langchain chromadb openai tiktoken
+```
+
+## Step 2: 문서 로딩 & 청킹
+
+```python
+from langchain.document_loaders import PyPDFLoader
+from langchain.text_splitter import RecursiveCharacterTextSplitter
+
+loader = PyPDFLoader("your-document.pdf")
+docs = loader.load()
+
+splitter = RecursiveCharacterTextSplitter(
+    chunk_size=500,
+    chunk_overlap=50,
+)
+chunks = splitter.split_documents(docs)
+print(f"총 {len(chunks)}개 청크 생성")
+```
+
+## Step 3: 벡터 저장소 구축
+
+```python
+from langchain.embeddings import OpenAIEmbeddings
+from langchain.vectorstores import Chroma
+
+embeddings = OpenAIEmbeddings()
+vectorstore = Chroma.from_documents(chunks, embeddings, persist_directory="./chroma_db")
+```
+
+## Step 4: RAG 체인 구성
+
+```python
+from langchain.chat_models import ChatOpenAI
+from langchain.chains import RetrievalQA
+
+llm = ChatOpenAI(model="gpt-4o", temperature=0)
+qa_chain = RetrievalQA.from_chain_type(
+    llm=llm,
+    retriever=vectorstore.as_retriever(search_kwargs={"k": 3}),
+)
+
+result = qa_chain.invoke("이 문서의 핵심 주장은?")
+print(result["result"])
+```
+
+## 다음 단계
+
+- **청킹 전략 최적화**: 시맨틱 청킹, 문단 기반 분할
+- **리랭킹 적용**: Cohere Reranker로 검색 정확도 향상
+- **하이브리드 검색**: 키워드 + 벡터 검색 결합
+
+---
+
+> 💡 이 가이드에서 사용한 도구에 대한 상세 리뷰는 [레이더 섹션](/radar/)에서 확인하세요.

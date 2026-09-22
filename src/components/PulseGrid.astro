@@ -1,0 +1,12 @@
+---
+const news = [
+  { category:'AI 산업', title:'Google, Gemini Ultra 2 공개 — 코드 생성 벤치마크 1위', desc:'멀티모달과 에이전트 기능을 강화한 새 모델의 핵심 변화', date:'2026.09.20', image:'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=720&h=440&fit=crop&q=85' },
+  { category:'정책', title:'한국 AI 기본법 국회 통과, 기업과 개발자에게 달라지는 것', desc:'고위험 AI 분류와 사업자 책무를 한눈에 정리했습니다.', date:'2026.09.19', image:'https://images.unsplash.com/photo-1505664194779-8beaceb93744?w=720&h=440&fit=crop&q=85' },
+  { category:'트렌드', title:'온디바이스 AI가 다시 주목받는 세 가지 이유', desc:'비용, 개인정보, 지연시간 관점에서 시장 변화를 읽습니다.', date:'2026.09.18', image:'https://images.unsplash.com/photo-1518770660439-4636190af475?w=720&h=440&fit=crop&q=85' },
+  { category:'생태계', title:'국내 AI 스타트업 투자 지도 2026', desc:'생성형 AI, 로보틱스, B2B SaaS 분야별 흐름을 요약했습니다.', date:'2026.09.17', image:'https://images.unsplash.com/photo-1556761175-b413da4baf72?w=720&h=440&fit=crop&q=85' },
+];
+---
+<section class="section" id="pulse"><div class="container"><div class="section-heading"><div><span class="section-kicker">LATEST</span><h2>최신 AI 뉴스</h2></div><a href="/pulse/" class="more">더보기 →</a></div><div class="news-grid">{news.map(n => <a href="/pulse/" class="news-card"><img src={n.image} alt={n.title} loading="lazy"/><div class="news-card-body"><span>{n.category}</span><h3>{n.title}</h3><p>{n.desc}</p><small>{n.date} · 5분 읽기</small></div></a>)}</div></div></section>
+<style>
+  .section-heading{display:flex;align-items:end;justify-content:space-between;margin-bottom:18px}.section-kicker{font-size:10px;color:var(--primary);font-weight:900;letter-spacing:.14em}.section-heading h2{font-size:24px;line-height:1.35;margin-top:4px}.more{font-size:12px;color:var(--text-2)}.more:hover{color:var(--primary)}.news-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.news-card img{width:100%;height:148px;object-fit:cover;border-radius:9px}.news-card-body{padding:10px 2px}.news-card-body>span{font-size:10px;color:var(--primary);font-weight:700}.news-card h3{font-size:14px;line-height:1.5;margin:5px 0}.news-card p{font-size:11px;color:var(--text-2);line-height:1.6}.news-card small{display:block;color:var(--text-3);font-size:10px;margin-top:8px}@media(max-width:900px){.news-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:520px){.news-grid{grid-template-columns:1fr 1fr;gap:12px}.news-card img{height:110px}.news-card h3{font-size:12px}}
+</style>

@@ -1,0 +1,11 @@
+---
+const guides = [
+  { title:'RAG 파이프라인 처음부터 구축하기', category:'초급부터 시작', desc:'문서를 검색하고 답변에 반영하는 가장 기본적인 구조' },
+  { title:'내 PC에서 LLM 돌리기', category:'로컬 AI', desc:'Ollama로 나만의 AI 환경을 만드는 순서' },
+  { title:'프롬프트를 설계하는 법', category:'생산성', desc:'결과의 품질을 바꾸는 질문의 구조와 패턴' },
+];
+---
+<section class="section"><div class="container"><div class="section-heading"><div><span class="section-kicker">READ & TRY</span><h2>직접 해보는 AI</h2></div><a href="/lab/" class="more">가이드 더보기 →</a></div><div class="guide-list">{guides.map((g,i) => <a href="/lab/" class="guide-row"><b>0{i+1}</b><div><span>{g.category}</span><h3>{g.title}</h3><p>{g.desc}</p></div><em>→</em></a>)}</div></div></section>
+<style>
+  .guide-list{border-top:1px solid var(--border)}.guide-row{display:grid;grid-template-columns:60px 1fr 30px;align-items:center;gap:14px;padding:18px 0;border-bottom:1px solid var(--border)}.guide-row>b{font-size:18px;color:var(--primary);opacity:.65}.guide-row span{font-size:10px;color:var(--accent);font-weight:800}.guide-row h3{font-size:15px;margin:3px 0}.guide-row p{font-size:11px;color:var(--text-2)}.guide-row em{font-size:20px;color:var(--text-3);font-style:normal}.guide-row:hover h3{color:var(--primary)}
+</style>

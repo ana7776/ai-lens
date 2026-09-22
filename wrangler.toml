@@ -1,0 +1,6 @@
+# Cloudflare Pages 설정 (선택사항 - Pages 대시보드에서도 설정 가능)
+name = "ai-lens"
+compatibility_date = "2026-09-01"
+
+[site]
+bucket = "./dist"

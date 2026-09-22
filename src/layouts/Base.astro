@@ -1,0 +1,72 @@
+---
+import '../styles/global.css';
+interface Props { title: string; description?: string; }
+const { title, description = 'AI 도서와 뉴스, 도구, 실전 정보를 큐레이션하는 AI 정보 포털.' } = Astro.props;
+---
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{title} | AI렌즈</title>
+  <meta name="description" content={description} />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-top container">
+      <a href="/" class="brand"><span class="brand-mark">◈</span><span>AI렌즈</span></a>
+      <nav class="main-nav" aria-label="주요 메뉴">
+        <a href="/pulse/">AI 뉴스</a>
+        <a href="/bookshelf/">AI 도서</a>
+        <a href="/radar/">AI 도구</a>
+        <a href="/lab/">실전 가이드</a>
+        <a href="/deepdive/">딥다이브</a>
+      </nav>
+      <div class="header-tools">
+        <button class="search-button" aria-label="검색">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
+          <span>검색</span>
+        </button>
+        <a href="/newsletter/" class="subscribe-link">뉴스레터</a>
+        <button class="language-button" aria-label="언어 선택">KR</button>
+      </div>
+    </div>
+    <div class="header-rule"></div>
+  </header>
+
+  <main><slot /></main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div><a href="/" class="brand"><span class="brand-mark">◈</span><span>AI렌즈</span></a><p>AI를 이해하는 가장 쉬운 시작점.<br />도서와 뉴스, 정보를 큐레이션합니다.</p></div>
+      <div><h4>콘텐츠</h4><a href="/pulse/">AI 뉴스</a><a href="/bookshelf/">AI 도서</a><a href="/radar/">AI 도구</a><a href="/lab/">실전 가이드</a></div>
+      <div><h4>안내</h4><a href="/about/">AI렌즈 소개</a><a href="/rss.xml">RSS</a><a href="/privacy/">개인정보처리방침</a><a href="mailto:hello@ai-lens.kr">제휴 문의</a></div>
+      <div class="footer-disclosure">일부 도서 및 서비스 링크에는 제휴 링크가 포함되어 있습니다. 링크를 통한 구매 시 추가 비용 없이 사이트 운영에 도움이 됩니다.</div>
+    </div>
+    <div class="container footer-bottom">© 2026 AI렌즈. All rights reserved.</div>
+  </footer>
+
+  <style>
+    .site-header{background:#fff;position:sticky;top:0;z-index:20}
+    .header-top{height:72px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{display:inline-flex;align-items:center;gap:8px;font-size:22px;font-weight:900;letter-spacing:-.05em;white-space:nowrap}
+    .brand-mark{color:var(--primary);font-size:22px}
+    .main-nav{display:flex;align-items:center;gap:26px;margin-left:auto;margin-right:auto}
+    .main-nav a{font-size:14px;color:var(--text-2);font-weight:600;white-space:nowrap}
+    .main-nav a:hover{color:var(--text)}
+    .header-tools{display:flex;align-items:center;gap:10px}
+    .search-button,.language-button{display:flex;align-items:center;gap:5px;border:0;background:transparent;color:var(--text-2);font:inherit;cursor:pointer}
+    .search-button span{font-size:12px}.language-button{font-size:11px;border:1px solid var(--border);border-radius:20px;padding:4px 8px}
+    .subscribe-link{font-size:12px;font-weight:700;color:var(--primary);white-space:nowrap}
+    .header-rule{border-bottom:1px solid var(--border)}
+    .site-footer{background:#fff;border-top:1px solid var(--border);margin-top:72px;padding:42px 0 24px}
+    .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:36px}
+    .footer-grid p,.footer-disclosure{font-size:12px;color:var(--text-2);line-height:1.7;margin-top:12px}
+    .footer-grid h4{font-size:12px;margin-bottom:10px}.footer-grid>a,.footer-grid div>a{display:block;font-size:12px;color:var(--text-2);margin-bottom:6px}.footer-grid div>a:hover{color:var(--primary)}
+    .footer-bottom{border-top:1px solid var(--border);margin-top:28px;padding-top:14px;font-size:11px;color:var(--text-3)}
+    @media(max-width:880px){.main-nav{gap:14px}.main-nav a{font-size:12px}.header-tools .subscribe-link{display:none}}
+    @media(max-width:680px){.header-top{height:60px}.brand{font-size:19px}.main-nav{display:none}.search-button span{display:none}.footer-grid{grid-template-columns:1fr 1fr}.footer-disclosure{grid-column:1/-1}}
+  </style>
+</body>
+</html>

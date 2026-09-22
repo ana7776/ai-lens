@@ -1,0 +1,18 @@
+{
+  "name": "ai-lens",
+  "type": "module",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "astro": "^5.9.0",
+    "@astrojs/mdx": "^4.3.0",
+    "@astrojs/sitemap": "^3.3.0",
+    "@astrojs/rss": "^4.0.0"
+  }
+}

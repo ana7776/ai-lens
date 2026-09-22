@@ -1,0 +1,12 @@
+---
+const items = [
+  { label:'AI 도구', title:'Claude 4 Opus', desc:'긴 문맥과 코딩에 강한 대화형 AI', image:'https://images.unsplash.com/photo-1555255707-c07966088b7b?w=520&h=300&fit=crop&q=85' },
+  { label:'AI 도구', title:'Cursor Pro', desc:'개발자의 작업 흐름을 바꾸는 코드 에디터', image:'https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=520&h=300&fit=crop&q=85' },
+  { label:'AI 도구', title:'Perplexity Pro', desc:'출처를 확인하며 조사하는 AI 검색', image:'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=520&h=300&fit=crop&q=85' },
+  { label:'AI 도구', title:'Midjourney', desc:'아이디어를 이미지로 바꾸는 생성 도구', image:'https://images.unsplash.com/photo-1545239351-1141bd82e8a6?w=520&h=300&fit=crop&q=85' },
+];
+---
+<section class="section"><div class="container"><div class="section-heading"><div><span class="section-kicker">TOOLS & SERVICES</span><h2>지금 써볼 만한 AI 도구</h2></div><a href="/radar/" class="more">더보기 →</a></div><div class="tool-grid">{items.map(item => <a class="tool-item" href="/radar/"><img src={item.image} alt={item.title} loading="lazy"/><div><span>{item.label}</span><h3>{item.title}</h3><p>{item.desc}</p></div></a>)}</div></div></section>
+<style>
+  .tool-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.tool-item img{width:100%;height:135px;object-fit:cover;border-radius:9px;margin-bottom:9px}.tool-item span{font-size:10px;color:var(--primary);font-weight:700}.tool-item h3{font-size:14px;margin:3px 0}.tool-item p{font-size:11px;color:var(--text-2)}@media(max-width:800px){.tool-grid{grid-template-columns:repeat(2,1fr)}}
+</style>

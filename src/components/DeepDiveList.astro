@@ -1,0 +1,11 @@
+---
+const reads = [
+  { title:'AI 에이전트 시대, 지식 노동의 다음 장면', category:'산업 분석', image:'https://images.unsplash.com/photo-1484417894907-623942c8ee29?w=520&h=300&fit=crop&q=85', date:'2026.09.17' },
+  { title:'AI와 저작권: 학습 데이터 논쟁의 현재', category:'정책과 사회', image:'https://images.unsplash.com/photo-1505664194779-8beaceb93744?w=520&h=300&fit=crop&q=85', date:'2026.09.15' },
+  { title:'온디바이스 AI는 클라우드를 대체할까', category:'기술 전망', image:'https://images.unsplash.com/photo-1518770660439-4636190af475?w=520&h=300&fit=crop&q=85', date:'2026.09.12' },
+];
+---
+<section class="section"><div class="container"><div class="section-heading"><div><span class="section-kicker">DEEP DIVE</span><h2>천천히 읽을 AI 이야기</h2></div><a href="/deepdive/" class="more">더보기 →</a></div><div class="read-grid">{reads.map(r => <a href="/deepdive/" class="read-card"><img src={r.image} alt={r.title} loading="lazy"/><div><span>{r.category}</span><h3>{r.title}</h3><small>{r.date} · 10분 읽기</small></div></a>)}</div></div></section>
+<style>
+  .read-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.read-card img{width:100%;height:150px;object-fit:cover;border-radius:9px;margin-bottom:10px}.read-card span{font-size:10px;color:var(--primary);font-weight:700}.read-card h3{font-size:15px;line-height:1.5;margin:4px 0 6px}.read-card small{font-size:10px;color:var(--text-3)}@media(max-width:700px){.read-grid{grid-template-columns:1fr 1fr}.read-card img{height:120px}.read-card h3{font-size:13px}}@media(max-width:480px){.read-grid{grid-template-columns:1fr}}
+</style>

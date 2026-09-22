@@ -1,0 +1,13 @@
+---
+const books = [
+  { title:'AI 2041', author:'리카이푸·천치우판', meta:'미래 전략', image:'https://images.unsplash.com/photo-1535378917042-10a22c95931a?w=260&h=360&fit=crop&q=85' },
+  { title:'비전공자도 이해할 수 있는 AI 지식', author:'박상길', meta:'AI 입문', image:'https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=260&h=360&fit=crop&q=85' },
+  { title:'에이전틱 AI', author:'랭체인 코리아', meta:'AI 개발', image:'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=260&h=360&fit=crop&q=85' },
+  { title:'AI가 쉬워지는 최소한의 수학', author:'아오키 타카시', meta:'기초 수학', image:'https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=260&h=360&fit=crop&q=85' },
+  { title:'AI 트랜스포메이션', author:'앤드류 응', meta:'산업 전략', image:'https://images.unsplash.com/photo-1518770660439-4636190af475?w=260&h=360&fit=crop&q=85' },
+];
+---
+<section class="section"><div class="container"><div class="section-heading"><div><span class="section-kicker">EDITOR'S PICKS</span><h2>에디터가 고른 AI 도서</h2></div><a href="/bookshelf/" class="more">더보기 →</a></div><div class="editor-grid">{books.map(book => <a href="/bookshelf/" class="editor-book"><div><img src={book.image} alt={book.title} loading="lazy"/></div><span>{book.meta}</span><h3>{book.title}</h3><p>{book.author}</p></a>)}</div></div></section>
+<style>
+  .editor-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:18px}.editor-book>div{padding:12px;background:#F0F2F5;border-radius:9px;margin-bottom:9px}.editor-book img{width:100%;height:205px;object-fit:cover;border-radius:3px;box-shadow:var(--shadow-book)}.editor-book>span{font-size:10px;color:var(--primary);font-weight:700}.editor-book h3{font-size:13px;line-height:1.45;margin:4px 0}.editor-book p{font-size:11px;color:var(--text-2)}@media(max-width:1000px){.editor-grid{grid-template-columns:repeat(4,1fr)}}@media(max-width:640px){.editor-grid{grid-template-columns:repeat(2,1fr);gap:12px}.editor-book img{height:185px}}
+</style>

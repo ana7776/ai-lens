@@ -1,0 +1,31 @@
+---
+const topics = ['GPT-5', 'AI 에이전트', '생성형 AI', 'AI 도서', '클로드', 'AI 규제', '온디바이스 AI', '프롬프트'];
+const featured = [
+  { type:'뉴스', title:'GPT-5 이후, AI 에이전트 경쟁이 시작됐다', desc:'모델 성능 경쟁에서 실제 일을 수행하는 에이전트 경쟁으로. 지금 읽어야 할 변화의 맥락을 정리했습니다.', date:'2026.09.21', image:'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=900&h=560&fit=crop&q=85', href:'/pulse/gpt5-launch-impact/' },
+  { type:'도서', title:'이번 주 AI 필독서: AI 2041', date:'2026.09.20', image:'https://images.unsplash.com/photo-1535378917042-10a22c95931a?w=600&h=390&fit=crop&q=85', href:'/bookshelf/ai-superpowers-2/' },
+  { type:'도구', title:'Claude 4와 GPT-5, 무엇을 골라야 할까', date:'2026.09.19', image:'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=600&h=390&fit=crop&q=85', href:'/radar/claude-vs-gpt-comparison/' },
+  { type:'가이드', title:'RAG를 처음 시작하는 사람을 위한 안내서', date:'2026.09.18', image:'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=390&fit=crop&q=85', href:'/lab/rag-pipeline-starter/' },
+  { type:'분석', title:'AI가 바꾸는 지식 노동의 다음 장면', date:'2026.09.17', image:'https://images.unsplash.com/photo-1484417894907-623942c8ee29?w=600&h=390&fit=crop&q=85', href:'/deepdive/ai-agent-era/' },
+];
+---
+<section class="front-page">
+  <div class="container">
+    <div class="topic-strip"><span class="topic-label">TODAY</span>{topics.map(topic => <a href={`/pulse/?q=${encodeURIComponent(topic)}`}>{topic}</a>)}</div>
+    <div class="masthead"><p>AI 도서와 뉴스, 도구와 실전 정보를 한곳에서</p><h1>AI렌즈</h1><span>AI를 이해하는 가장 쉬운 시작점</span></div>
+    <div class="feature-layout">
+      <a class="lead-feature" href={featured[0].href}>
+        <img src={featured[0].image} alt={featured[0].title} />
+        <div class="feature-overlay"><span class="eyebrow">{featured[0].type}</span><h2>{featured[0].title}</h2><p>{featured[0].desc}</p><small>{featured[0].date} · 7분 읽기</small></div>
+      </a>
+      <div class="side-features">{featured.slice(1).map(item => <a href={item.href} class="side-feature"><img src={item.image} alt={item.title} /><div><span class="eyebrow">{item.type}</span><h3>{item.title}</h3><small>{item.date}</small></div></a>)}</div>
+    </div>
+  </div>
+</section>
+<style>
+  .front-page{padding-top:20px}.topic-strip{display:flex;align-items:center;gap:18px;overflow:hidden;padding:10px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);white-space:nowrap}.topic-strip a{font-size:12px;color:var(--text-2)}.topic-strip a:hover{color:var(--primary)}.topic-label{font-size:10px;font-weight:900;letter-spacing:.12em;color:var(--primary);margin-right:2px}
+  .masthead{text-align:center;padding:36px 0 30px}.masthead p{font-size:13px;color:var(--text-2);margin-bottom:4px}.masthead h1{font-size:45px;letter-spacing:-.09em;line-height:1.2;font-weight:900}.masthead>span{font-size:12px;color:var(--text-3)}
+  .feature-layout{display:grid;grid-template-columns:1.45fr 1fr;gap:24px}.lead-feature{position:relative;min-height:430px;border-radius:14px;overflow:hidden;background:#111}.lead-feature img{width:100%;height:100%;min-height:430px;object-fit:cover;filter:saturate(.9)}.feature-overlay{position:absolute;left:0;right:0;bottom:0;padding:34px 30px 28px;color:#fff;background:linear-gradient(transparent,rgba(7,12,25,.92) 70%)}.eyebrow{display:inline-block;font-size:10px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--primary);margin-bottom:7px}.feature-overlay .eyebrow{color:#C7D2FE}.feature-overlay h2{font-size:28px;line-height:1.35;margin-bottom:8px;letter-spacing:-.04em}.feature-overlay p{font-size:13px;color:rgba(255,255,255,.82);line-height:1.6;max-width:530px}.feature-overlay small,.side-feature small{display:block;font-size:10px;color:rgba(255,255,255,.65);margin-top:12px}
+  .side-features{display:grid;grid-template-columns:1fr 1fr;gap:18px}.side-feature{display:flex;flex-direction:column;border-bottom:1px solid var(--border);padding-bottom:16px}.side-feature img{width:100%;height:144px;object-fit:cover;border-radius:8px;margin-bottom:10px}.side-feature h3{font-size:14px;line-height:1.5;margin-bottom:3px}.side-feature small{color:var(--text-3);margin-top:3px}.side-feature .eyebrow{margin-bottom:2px}
+  @media(max-width:780px){.feature-layout{grid-template-columns:1fr}.lead-feature,.lead-feature img{min-height:340px}.feature-overlay h2{font-size:23px}.masthead h1{font-size:36px}}
+  @media(max-width:520px){.topic-strip{gap:12px}.side-features{grid-template-columns:1fr 1fr;gap:12px}.side-feature img{height:100px}.side-feature h3{font-size:12px}}
+</style>
