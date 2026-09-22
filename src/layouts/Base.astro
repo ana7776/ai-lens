@@ -16,7 +16,7 @@ const { title, description = 'AI 도서와 뉴스, 도구, 실전 정보를 큐�
 <body>
   <header class="site-header">
     <div class="header-top container">
-      <a href="/" class="brand"><span class="brand-mark">◈</span><span>AI렌즈</span></a>
+      <a href="/" class="brand"><img class="brand-favicon" src="/favicon.png" alt="" /><span>AI렌즈</span></a>
       <nav class="main-nav" aria-label="주요 메뉴">
         <a href="/pulse/">AI 뉴스</a>
         <a href="/bookshelf/">AI 도서</a>
@@ -40,7 +40,7 @@ const { title, description = 'AI 도서와 뉴스, 도구, 실전 정보를 큐�
 
   <footer class="site-footer">
     <div class="container footer-grid">
-      <div><a href="/" class="brand"><span class="brand-mark">◈</span><span>AI렌즈</span></a><p>AI를 이해하는 가장 쉬운 시작점.<br />도서와 뉴스, 정보를 큐레이션합니다.</p></div>
+      <div><a href="/" class="brand"><img class="brand-favicon" src="/favicon.png" alt="" /><span>AI렌즈</span></a><p>AI를 이해하는 가장 쉬운 시작점.<br />도서와 뉴스, 정보를 큐레이션합니다.</p></div>
       <div><h4>콘텐츠</h4><a href="/pulse/">AI 뉴스</a><a href="/bookshelf/">AI 도서</a><a href="/radar/">AI 도구</a><a href="/lab/">실전 가이드</a></div>
       <div><h4>안내</h4><a href="/about/">AI렌즈 소개</a><a href="/rss.xml">RSS</a><a href="/privacy/">개인정보처리방침</a><a href="mailto:hello@ai-lens.kr">제휴 문의</a></div>
       <div class="footer-disclosure">일부 도서 및 서비스 링크에는 제휴 링크가 포함되어 있습니다. 링크를 통한 구매 시 추가 비용 없이 사이트 운영에 도움이 됩니다.</div>
@@ -52,7 +52,7 @@ const { title, description = 'AI 도서와 뉴스, 도구, 실전 정보를 큐�
     .site-header{background:#fff;position:sticky;top:0;z-index:20}
     .header-top{height:72px;display:flex;align-items:center;justify-content:space-between;gap:24px}
     .brand{display:inline-flex;align-items:center;gap:8px;font-size:22px;font-weight:900;letter-spacing:-.05em;white-space:nowrap}
-    .brand-mark{color:var(--primary);font-size:22px}
+    .brand-favicon{width:25px;height:25px;object-fit:cover;border-radius:7px;box-shadow:0 2px 8px rgba(22,120,232,.16)}
     .main-nav{display:flex;align-items:center;gap:26px;margin-left:auto;margin-right:auto}
     .main-nav a{font-size:14px;color:var(--text-2);font-weight:600;white-space:nowrap}
     .main-nav a:hover{color:var(--text)}
@@ -67,7 +67,7 @@ const { title, description = 'AI 도서와 뉴스, 도구, 실전 정보를 큐�
     .footer-grid h4{font-size:12px;margin-bottom:10px}.footer-grid>a,.footer-grid div>a{display:block;font-size:12px;color:var(--text-2);margin-bottom:6px}.footer-grid div>a:hover{color:var(--primary)}
     .footer-bottom{border-top:1px solid var(--border);margin-top:28px;padding-top:14px;font-size:11px;color:var(--text-3)}
     @media(max-width:880px){.main-nav{gap:14px}.main-nav a{font-size:12px}.header-tools .subscribe-link{display:none}}
-    @media(max-width:680px){.header-top{height:60px}.brand{font-size:19px}.main-nav{display:none}.search-button span{display:none}.footer-grid{grid-template-columns:1fr 1fr}.footer-disclosure{grid-column:1/-1}}
+    @media(max-width:680px){.header-top{height:60px}.brand{font-size:19px}.brand-favicon{width:22px;height:22px}.main-nav{display:none}.search-button span{display:none}.footer-grid{grid-template-columns:1fr 1fr}.footer-disclosure{grid-column:1/-1}}
   </style>
 </body>
 </html>
