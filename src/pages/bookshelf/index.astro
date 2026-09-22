@@ -1,0 +1,10 @@
+---
+import Base from '../../layouts/Base.astro';
+import SectionPage from '../../components/SectionPage.astro';
+const items = [
+  { label:'AI 입문', title:'이번 주 AI 필독서', description:'AI를 처음 시작하는 사람부터 실무자까지 읽을 만한 책을 고릅니다.', meta:'도서 큐레이션' },
+  { label:'AI 개발', title:'에이전트와 코딩을 배우는 책', description:'생성형 AI, AI 에이전트, RAG와 개발 실무를 다루는 책을 소개합니다.', meta:'실용서 리뷰' },
+  { label:'미래 전망', title:'AI와 사회를 읽는 책', description:'기술 너머의 산업 변화와 사람의 일을 생각하게 하는 책을 모읍니다.', meta:'깊이 읽기' },
+];
+---
+<Base title="AI 도서" description="AI 입문서, 개발서, 미래 전망서를 큐레이션합니다."><SectionPage kicker="AI BOOKSHELF" title="AI 도서" description="무엇부터 읽을지 고민될 때, AI렌즈가 먼저 읽고 고른 책을 만나보세요." items={items} /></Base>

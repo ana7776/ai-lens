@@ -1,0 +1,10 @@
+---
+import Base from '../../layouts/Base.astro';
+import SectionPage from '../../components/SectionPage.astro';
+const items = [
+  { label:'AI 산업', title:'최신 AI 뉴스 다이제스트', description:'모델, 기업, 정책과 시장의 변화를 핵심만 빠르게 정리합니다.', meta:'매일 업데이트' },
+  { label:'트렌드', title:'이번 주 가장 중요한 변화', description:'새로운 기술이 실제 업무와 생활에 어떤 영향을 주는지 맥락으로 읽습니다.', meta:'주간 큐레이션' },
+  { label:'정책', title:'AI 규제와 사회 변화', description:'국내외 AI 정책과 저작권, 안전 이슈를 쉽게 풀이합니다.', meta:'정책 브리핑' },
+];
+---
+<Base title="AI 뉴스" description="AI 산업, 정책, 트렌드의 핵심 뉴스를 큐레이션합니다."><SectionPage kicker="AI PULSE" title="최신 AI 뉴스" description="쏟아지는 AI 뉴스 속에서 지금 알아야 할 변화만 골라 전합니다." items={items} /></Base>

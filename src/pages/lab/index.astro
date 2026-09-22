@@ -1,0 +1,10 @@
+---
+import Base from '../../layouts/Base.astro';
+import SectionPage from '../../components/SectionPage.astro';
+const items = [
+  { label:'초급', title:'RAG 파이프라인 시작하기', description:'문서를 검색하고 답변에 반영하는 가장 기본적인 구조부터 시작합니다.', meta:'따라 하기 가이드' },
+  { label:'로컬 AI', title:'내 PC에서 LLM 돌리기', description:'Ollama와 로컬 모델로 나만의 AI 환경을 구성하는 방법을 다룹니다.', meta:'실습 가이드' },
+  { label:'생산성', title:'프롬프트를 설계하는 법', description:'질문의 구조를 바꿔 결과의 품질을 높이는 패턴을 연습합니다.', meta:'워크플로 가이드' },
+];
+---
+<Base title="실전 가이드" description="따라 하면서 배우는 AI 실전 가이드와 튜토리얼입니다."><SectionPage kicker="AI LAB" title="실전 가이드" description="읽고 끝나는 정보가 아니라, 직접 따라 하며 결과를 만드는 가이드입니다." items={items} /></Base>

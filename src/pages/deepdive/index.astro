@@ -1,0 +1,10 @@
+---
+import Base from '../../layouts/Base.astro';
+import SectionPage from '../../components/SectionPage.astro';
+const items = [
+  { label:'산업 분석', title:'AI 에이전트 시대, 지식 노동의 다음 장면', description:'모델 경쟁을 넘어 실제 일을 수행하는 에이전트의 변화를 분석합니다.', meta:'10분 읽기' },
+  { label:'정책과 사회', title:'AI와 저작권 논쟁의 현재', description:'학습 데이터와 창작자의 권리를 둘러싼 쟁점을 차분히 살펴봅니다.', meta:'10분 읽기' },
+  { label:'기술 전망', title:'온디바이스 AI는 클라우드를 대체할까', description:'비용, 개인정보, 지연시간의 관점에서 다음 기술 흐름을 전망합니다.', meta:'10분 읽기' },
+];
+---
+<Base title="딥다이브" description="AI 산업과 기술 변화의 맥락을 깊이 있게 분석합니다."><SectionPage kicker="AI DEEP DIVE" title="딥다이브" description="빠른 뉴스보다 오래 남는 맥락과 질문을 중심으로 AI를 깊이 읽습니다." items={items} /></Base>
