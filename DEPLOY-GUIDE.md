@@ -79,6 +79,22 @@ git push
 
 ---
 
+## YES24 도서표지 API 연결
+
+현재 사이트는 YES24 API 키가 없어도 fallback 데이터로 빌드됩니다. YES24 Developers에서 API 키를 발급받은 뒤 Cloudflare Pages 프로젝트의 환경변수에 다음 값을 추가하면, 배포 빌드 때 도서명으로 검색해 공식 표지·가격·저자·출판사 정보를 갱신합니다.
+
+```text
+YES24_API_KEY=발급받은_API_KEY
+```
+
+API 키는 브라우저나 GitHub 저장소에 넣지 마세요. Cloudflare Pages 환경변수에만 저장해야 합니다.
+
+파트너스 가입 전에는 일반 YES24 상품 링크가 사용되고, 나중에 파트너스 코드가 생기면 공개 환경변수에 다음 값을 추가해 링크에 연결할 수 있습니다.
+
+```text
+PUBLIC_YES24_PARTNER_CODE=발급받은_파트너_코드
+```
+
 ## 어필리에이트 프로그램 가입 가이드
 
 ### 쿠팡 파트너스

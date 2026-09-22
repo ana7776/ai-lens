@@ -1,0 +1,74 @@
+[
+  {
+    "rank": 1,
+    "title": "챗GPT·제미나이·클로드까지 모두를 위한 AI",
+    "author": "지현이(디지털거북이)",
+    "publisher": "시프트",
+    "price": 19800,
+    "rating": 9.4,
+    "reviews": 43,
+    "cover": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=300&h=420&fit=crop&q=85",
+    "yes24Id": "130649853",
+    "source": "fallback"
+  },
+  {
+    "rank": 2,
+    "title": "바로바로 클로드 with 코워크, 스킬, 클로드 코드",
+    "author": "서기석",
+    "publisher": "혜지원",
+    "price": 25200,
+    "rating": 9.9,
+    "reviews": 47,
+    "cover": "https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=300&h=420&fit=crop&q=85",
+    "yes24Id": "130512345",
+    "source": "fallback"
+  },
+  {
+    "rank": 3,
+    "title": "에이전틱 AI",
+    "author": "랭체인 코리아",
+    "publisher": "한빛미디어",
+    "price": 31500,
+    "rating": 9.9,
+    "reviews": 40,
+    "cover": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=300&h=420&fit=crop&q=85",
+    "yes24Id": "130234567",
+    "source": "fallback"
+  },
+  {
+    "rank": 4,
+    "title": "AI 2041",
+    "author": "리카이푸·천치우판",
+    "publisher": "한빛비즈",
+    "price": 26820,
+    "rating": 9.2,
+    "reviews": 71,
+    "cover": "https://images.unsplash.com/photo-1535378917042-10a22c95931a?w=300&h=420&fit=crop&q=85",
+    "yes24Id": "109456789",
+    "source": "fallback"
+  },
+  {
+    "rank": 5,
+    "title": "비전공자도 이해할 수 있는 AI 지식",
+    "author": "박상길",
+    "publisher": "반니",
+    "price": 17820,
+    "rating": 9.8,
+    "reviews": 110,
+    "cover": "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=300&h=420&fit=crop&q=85",
+    "yes24Id": "128765432",
+    "source": "fallback"
+  },
+  {
+    "rank": 6,
+    "title": "AI가 쉬워지는 최소한의 수학",
+    "author": "아오키 타카시",
+    "publisher": "프리렉",
+    "price": 18000,
+    "rating": 9.3,
+    "reviews": 36,
+    "cover": "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=300&h=420&fit=crop&q=85",
+    "yes24Id": "130345678",
+    "source": "fallback"
+  }
+]

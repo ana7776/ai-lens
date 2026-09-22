@@ -1,15 +1,15 @@
 ---
-const books = [
-  { rank:1, title:'챗GPT·제미나이·클로드까지 모두를 위한 AI', author:'지현이(디지털거북이)', meta:'시프트 · AI 입문', price:'19,800', rating:'9.4', image:'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=300&h=420&fit=crop&q=85', yes24:'130649853' },
-  { rank:2, title:'바로바로 클로드 with 코워크, 스킬, 클로드 코드', author:'서기석', meta:'혜지원 · AI 코딩', price:'25,200', rating:'9.9', image:'https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=300&h=420&fit=crop&q=85', yes24:'130512345' },
-  { rank:3, title:'에이전틱 AI', author:'랭체인 코리아', meta:'한빛미디어 · AI 개발', price:'31,500', rating:'9.9', image:'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=300&h=420&fit=crop&q=85', yes24:'130234567' },
-  { rank:4, title:'AI 2041', author:'리카이푸·천치우판', meta:'한빛비즈 · 미래 전략', price:'26,820', rating:'9.2', image:'https://images.unsplash.com/photo-1535378917042-10a22c95931a?w=300&h=420&fit=crop&q=85', yes24:'109456789' },
-  { rank:5, title:'비전공자도 이해할 수 있는 AI 지식', author:'박상길', meta:'반니 · AI 교양', price:'17,820', rating:'9.8', image:'https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=300&h=420&fit=crop&q=85', yes24:'128765432' },
-  { rank:6, title:'AI가 쉬워지는 최소한의 수학', author:'아오키 타카시', meta:'프리렉 · 기초 수학', price:'18,000', rating:'9.3', image:'https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=300&h=420&fit=crop&q=85', yes24:'130345678' },
-];
-const yes24Link = (id: string) => `https://www.yes24.com/product/goods/${id}?Partner=YOUR_PARTNER_CODE`;
+import books from '../data/yes24-books.json';
+
+const partnerCode = import.meta.env.PUBLIC_YES24_PARTNER_CODE?.trim() || '';
+const displayPrice = (price: number) => price.toLocaleString('ko-KR');
+const yes24Link = (book: { yes24Id?: string; yes24Link?: string }) => {
+  const base = book.yes24Link || `https://www.yes24.com/product/goods/${book.yes24Id}`;
+  if (!partnerCode) return base;
+  return `${base}${base.includes('?') ? '&' : '?'}Partner=${encodeURIComponent(partnerCode)}`;
+};
 ---
-<section class="section" id="ranking"><div class="container"><div class="section-heading"><div><span class="section-kicker">BOOKSHELF</span><h2>AI 도서 베스트</h2></div><a href="/bookshelf/" class="more">도서 더보기 →</a></div><div class="bookshelf-grid">{books.map(book => <article class="rank-book"><div class="cover"><img src={book.image} alt={book.title} loading="lazy"/><b>{book.rank}</b></div><div class="rank-book-body"><span class="book-meta">{book.meta}</span><h3>{book.title}</h3><p>{book.author}</p><div class="book-bottom"><span>★ {book.rating}</span><strong>₩{book.price}</strong></div><a href={yes24Link(book.yes24)} target="_blank" rel="noopener sponsored">YES24에서 보기 →</a></div></article>)}</div><p class="disclosure">* 판매 순위와 가격은 수집 시점 기준이며 변동될 수 있습니다. YES24 링크에는 링크프라이스 제휴 링크를 연결할 수 있습니다.</p></div></section>
+<section class="section" id="ranking"><div class="container"><div class="section-heading"><div><span class="section-kicker">BOOKSHELF</span><h2>AI 도서 베스트</h2></div><a href="/bookshelf/" class="more">도서 더보기 →</a></div><div class="bookshelf-grid">{books.map(book => <article class="rank-book"><div class="cover"><img src={book.cover} alt={book.title} loading="lazy"/><b>{book.rank}</b></div><div class="rank-book-body"><span class="book-meta">{book.publisher} · AI 도서</span><h3>{book.title}</h3><p>{book.author}</p><div class="book-bottom"><span>★ {book.rating}</span><strong>₩{displayPrice(book.price)}</strong></div><a href={yes24Link(book)} target="_blank" rel="noopener">YES24 상품 보기 →</a></div></article>)}</div><p class="disclosure">* 도서표지는 YES24 API 키가 등록되면 빌드 시 공식 커버 이미지로 자동 갱신됩니다. 현재는 fallback 이미지와 일반 YES24 상품 링크를 사용합니다.</p></div></section>
 <style>
   .bookshelf-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:16px}.rank-book{min-width:0}.cover{position:relative;background:#F0F2F5;border-radius:9px;padding:12px 12px 10px}.cover img{width:100%;height:210px;object-fit:cover;border-radius:3px;box-shadow:var(--shadow-book)}.cover b{position:absolute;top:8px;left:8px;width:25px;height:25px;background:var(--text);color:#fff;border-radius:50%;font-size:12px;display:flex;align-items:center;justify-content:center}.rank-book-body{padding:9px 2px}.book-meta{font-size:10px;color:var(--primary);font-weight:700}.rank-book h3{font-size:13px;line-height:1.45;margin:4px 0}.rank-book p{font-size:11px;color:var(--text-2)}.book-bottom{display:flex;justify-content:space-between;align-items:center;margin:8px 0;color:var(--gold);font-size:11px}.book-bottom strong{font-size:13px}.rank-book-body>a{display:block;text-align:center;background:var(--primary-soft);color:var(--primary);font-size:10px;padding:6px;border-radius:6px;font-weight:700}.disclosure{font-size:10px;color:var(--text-3);margin-top:12px}@media(max-width:1050px){.bookshelf-grid{grid-template-columns:repeat(3,1fr)}}@media(max-width:560px){.bookshelf-grid{grid-template-columns:repeat(2,1fr);gap:12px}.cover img{height:190px}}
 </style>

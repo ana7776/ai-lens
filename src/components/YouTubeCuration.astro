@@ -1,0 +1,40 @@
+---
+const videos = [
+  {
+    category: 'AI 뉴스',
+    title: '오픈AI, 아스트라로 AGI 시대 열었다',
+    channel: '한국경제TV뉴스',
+    views: '66만회',
+    date: '2026.09.07',
+    videoId: '8UKcp5MEIGM',
+  },
+  {
+    category: 'AI 에이전트',
+    title: 'ChatGPT Work와 Claude Cowork, AI 에이전트의 미래',
+    channel: 'AI 겸임교수 이종범',
+    views: '6천회',
+    date: '2026.07.20',
+    videoId: 'sttMT6QONDk',
+  },
+  {
+    category: '실전 활용',
+    title: '알아서 PPT 만들어주는 AI 에이전트 활용법',
+    channel: '일잘러 장피엠',
+    views: '9만회',
+    date: '2026.08.15',
+    videoId: 'P9EfmIrgjXw',
+  },
+  {
+    category: 'AI 도서',
+    title: "AI가 두려운 당신에게: AI 훈민정음 북리뷰",
+    channel: '사월이네 북리뷰',
+    views: '4천회',
+    date: '2025.09.28',
+    videoId: 'k3zLQsB27Vo',
+  },
+];
+---
+<section class="section youtube-section"><div class="container"><div class="section-heading"><div><span class="section-kicker">WATCH & LEARN</span><h2>지금 볼 만한 AI 유튜브</h2></div><a href="https://www.youtube.com/results?search_query=AI+뉴스+도서+에이전트" target="_blank" rel="noopener" class="more">YouTube에서 더보기 →</a></div><div class="video-grid">{videos.map(video => <a href={`https://www.youtube.com/watch?v=${video.videoId}`} target="_blank" rel="noopener" class="video-card"><div class="video-thumb"><img src={`https://i.ytimg.com/vi/${video.videoId}/maxresdefault.jpg`} alt={video.title} loading="lazy"/><span class="play">▶</span></div><div class="video-body"><span>{video.category}</span><h3>{video.title}</h3><p>{video.channel}</p><small>{video.date} · 조회수 {video.views}</small></div></a>)}</div><p class="youtube-note">* 영상 정보는 YouTube 검색 결과를 기준으로 큐레이션하며, 제목·조회수는 변경될 수 있습니다.</p></div></section>
+<style>
+  .video-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.video-thumb{position:relative;overflow:hidden;border-radius:9px;background:#EEF2FF}.video-thumb img{width:100%;height:148px;object-fit:cover;transition:transform .25s}.video-card:hover .video-thumb img{transform:scale(1.03)}.play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:rgba(17,24,39,.85);color:#fff;font-size:14px;padding-left:2px}.video-body{padding:10px 2px}.video-body>span{font-size:10px;color:var(--primary);font-weight:700}.video-body h3{font-size:14px;line-height:1.5;margin:4px 0}.video-body p{font-size:11px;color:var(--text-2)}.video-body small{font-size:10px;color:var(--text-3)}.youtube-note{font-size:10px;color:var(--text-3);margin-top:12px}@media(max-width:900px){.video-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:520px){.video-grid{gap:12px}.video-thumb img{height:110px}.video-body h3{font-size:12px}}
+</style>

@@ -46,6 +46,17 @@ npm run preview
    - **출력 디렉토리**: `dist`
    - **Node 버전**: 20+
 
+## YES24 도서표지 API 설정
+
+`YES24_API_KEY`가 있으면 `npm run build` 전에 YES24 상품 검색 API를 호출해 도서 커버·가격·저자·출판사 정보를 갱신합니다. 키가 없으면 `src/data/yes24-books.json`의 fallback 데이터를 사용합니다.
+
+```bash
+$env:YES24_API_KEY="발급받은_API_KEY"
+npm run build
+```
+
+파트너스 가입 전에는 일반 YES24 상품 링크를 사용합니다. 나중에 파트너스 코드가 발급되면 `PUBLIC_YES24_PARTNER_CODE` 환경변수로 연결할 수 있습니다.
+
 ## 어필리에이트 링크 설정
 
 각 콘텐츠의 frontmatter에서 어필리에이트 링크를 관리합니다:
