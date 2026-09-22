@@ -2,9 +2,12 @@
 import Base from '../../layouts/Base.astro';
 import SectionPage from '../../components/SectionPage.astro';
 const items = [
-  { label:'AI 산업', title:'최신 AI 뉴스 다이제스트', description:'모델, 기업, 정책과 시장의 변화를 핵심만 빠르게 정리합니다.', meta:'매일 업데이트' },
-  { label:'트렌드', title:'이번 주 가장 중요한 변화', description:'새로운 기술이 실제 업무와 생활에 어떤 영향을 주는지 맥락으로 읽습니다.', meta:'주간 큐레이션' },
-  { label:'정책', title:'AI 규제와 사회 변화', description:'국내외 AI 정책과 저작권, 안전 이슈를 쉽게 풀이합니다.', meta:'정책 브리핑' },
+  { label:'공식 뉴스 · 09.21', title:'OpenAI, 수학·AI 자문 그룹 출범', description:'AI 연구와 수학의 접점을 넓히는 최신 공식 발표를 짚어봅니다.', meta:'OpenAI News', href:'https://openai.com/index/advisory-group-on-mathematics-and-ai/' },
+  { label:'공식 뉴스 · 09.17', title:'법률 업무에 들어온 AI 에이전트', description:'Astra for Law 발표를 통해 전문직 업무에서 에이전트가 맡는 역할을 살펴봅니다.', meta:'OpenAI News', href:'https://openai.com/index/astra-for-law/' },
+  { label:'AI 에이전트', title:'쇼핑과 결제를 연결하는 에이전트', description:'AI가 상품 검색을 넘어 결제 흐름까지 이어지는 커머스 변화를 정리합니다.', meta:'최근 동향', href:'https://aiweekly.co/ai-news-today' },
+  { label:'AI 안전', title:'에이전트 시대의 안전장치', description:'UN 과학 패널이 제기한 에이전트 위험과 거버넌스 과제를 쉽게 풀이합니다.', meta:'정책 브리핑', href:'https://news.un.org/en/story/2026/09/1168380' },
+  { label:'연구', title:'모델 미스얼라인먼트 보고 프레임워크', description:'모델이 의도와 다르게 행동할 때 무엇을 기록하고 검증해야 하는지 살펴봅니다.', meta:'안전·평가', href:'https://openai.com/index/model-misalignment-reporting-framework/' },
+  { label:'비즈니스', title:'AI 사용을 사업 성과로 연결하는 법', description:'도입률보다 중요한 업무 가치와 측정 방법을 중심으로 읽습니다.', meta:'기업 활용', href:'https://openai.com/index/how-to-connect-ai-usage-to-business-value/' },
 ];
 ---
 <Base title="AI 뉴스" description="AI 산업, 정책, 트렌드의 핵심 뉴스를 큐레이션합니다."><SectionPage kicker="AI PULSE" title="최신 AI 뉴스" description="쏟아지는 AI 뉴스 속에서 지금 알아야 할 변화만 골라 전합니다." items={items} /></Base>

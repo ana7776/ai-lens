@@ -2,9 +2,12 @@
 import Base from '../../layouts/Base.astro';
 import SectionPage from '../../components/SectionPage.astro';
 const items = [
-  { label:'대화형 AI', title:'Claude와 ChatGPT 비교', description:'업무 유형과 사용 목적에 따라 어떤 도구가 맞는지 비교합니다.', meta:'도구 비교' },
-  { label:'생산성', title:'지금 써볼 만한 AI 도구', description:'글쓰기, 검색, 디자인, 회의와 자동화를 돕는 서비스를 소개합니다.', meta:'서비스 리뷰' },
-  { label:'실험실', title:'직접 써본 사용 후기', description:'기능 목록보다 실제 작업 흐름에서의 장단점을 중심으로 살펴봅니다.', meta:'실사용 테스트' },
+  { label:'범용 AI', title:'ChatGPT · Claude · Gemini', description:'글쓰기, 추론, 긴 문서와 업무 연결성의 차이를 목적별로 비교합니다.', meta:'도구 비교' },
+  { label:'에이전트', title:'Gumloop · n8n · Zapier', description:'노코드와 자동화 플랫폼으로 반복 업무를 에이전트 워크플로로 바꾸는 방법을 살펴봅니다.', meta:'에이전트 플랫폼', href:'https://www.gumloop.com/blog/agentic-ai-tools' },
+  { label:'코딩', title:'Codex · Cursor · GitHub Copilot', description:'코드 생성보다 계획, 검증, 리뷰까지 포함한 AI 개발 환경의 차이를 정리합니다.', meta:'개발 도구 비교', href:'https://aimultiple.com/ai-agent-tools' },
+  { label:'업무 자동화', title:'Claude Cowork와 멀티스텝 작업', description:'문서와 파일을 이해하고 여러 단계를 이어서 처리하는 업무형 AI를 살펴봅니다.', meta:'생산성 도구', href:'https://www.lindy.ai/blog/ai-platforms' },
+  { label:'리서치', title:'Perplexity와 Deep Research', description:'검색 결과를 넘어 출처를 확인하며 조사하는 워크플로를 비교합니다.', meta:'조사 도구' },
+  { label:'실사용 테스트', title:'내 업무에 맞는 AI 도구 고르기', description:'속도, 비용, 데이터 접근권한, 검증 가능성을 기준으로 선택합니다.', meta:'실전 체크리스트' },
 ];
 ---
 <Base title="AI 도구" description="생성형 AI와 생산성 도구를 비교하고 소개합니다."><SectionPage kicker="AI RADAR" title="AI 도구" description="수많은 AI 서비스 중 내 일에 맞는 도구를 찾을 수 있도록 비교합니다." items={items} /></Base>
