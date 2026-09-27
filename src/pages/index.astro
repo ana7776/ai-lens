@@ -1,23 +1,18 @@
 ---
 import Base from '../layouts/Base.astro';
-import HeroSection from '../components/HeroSection.astro';
-import PulseGrid from '../components/PulseGrid.astro';
-import YouTubeCuration from '../components/YouTubeCuration.astro';
-import BookRanking from '../components/BookRanking.astro';
-import BookshelfRail from '../components/BookshelfRail.astro';
-import RadarStrip from '../components/RadarStrip.astro';
-import LabPreview from '../components/LabPreview.astro';
-import DeepDiveList from '../components/DeepDiveList.astro';
-import NewsletterCTA from '../components/NewsletterCTA.astro';
+import GuideCard from '../components/GuideCard.astro';
+const guides = [
+  { href:'/start/', category:'처음 시작하기', title:'AI를 어디서부터 시작할지 모르겠다면', description:'작업 정의, 입력 자료의 경계, 결과 검수의 세 단계로 첫 AI 작업을 설계합니다.', meta:'입문 허브' },
+  { href:'/work/meeting-notes/', category:'AI 업무', title:'회의 기록을 실행 항목으로 바꾸는 프롬프트', description:'결정 사항, 담당자, 기한, 미확정 항목을 나누고 원문과 대조하는 방법입니다.', meta:'회의록 · 검수 포함' },
+  { href:'/work/pdf-review/', category:'AI 업무', title:'긴 문서를 근거와 함께 검토하기', description:'문서 요약에 그치지 않고 주장과 근거 위치, 확인이 필요한 빈칸을 분리합니다.', meta:'문서 읽기 · 개인정보 주의' },
+  { href:'/create/threads-to-blog/', category:'콘텐츠 제작', title:'짧은 메모를 블로그 초안으로 확장하기', description:'문장만 늘리지 않고 개인 경험과 독자 질문을 중심으로 글의 구조를 만듭니다.', meta:'메모 → 블로그' },
+  { href:'/create/ai-music-brief/', category:'콘텐츠 제작', title:'AI 콘텐츠 제작 전 브리프 만들기', description:'용도, 분위기, 구성, 금지 요소와 권리 확인을 먼저 정리합니다.', meta:'제작 전 체크리스트' },
+  { href:'/workflow/weekly-pipeline/', category:'통합 워크플로우', title:'혼자 운영하는 주간 AI 파이프라인', description:'기획부터 자료 확인, 초안, 편집, 발행까지 사람의 검토를 남깁니다.', meta:'기획 → 제작 → 검수' },
+];
 ---
-<Base title="AI 도서와 뉴스, 정보를 모아보는 AI 포털">
-  <HeroSection />
-  <PulseGrid />
-  <BookRanking />
-  <BookshelfRail />
-  <RadarStrip />
-  <LabPreview />
-  <DeepDiveList />
-  <YouTubeCuration />
-  <NewsletterCTA />
+<Base title="혼자 일하는 사람을 위한 AI 실무와 제작 가이드" description="직장인과 1인 크리에이터가 AI로 기획, 업무, 콘텐츠 제작을 이어가는 실전 워크플로우와 검수 기준을 안내합니다.">
+<section class="hero"><div class="container hero-inner"><span class="eyebrow">AI GUIDE FOR SOLO WORK</span><h1>혼자 일하는 사람을 위한<br />AI 업무·콘텐츠 가이드</h1><p>AI렌즈 Work는 AI에게 무엇을 맡기고, 무엇을 사람이 확인해야 하는지 단계별로 설명합니다. 도구를 나열하거나 결과를 보장하지 않고, 실제 작업에 반복해서 사용할 수 있는 기준과 체크리스트를 제공합니다.</p><div class="hero-actions"><a class="button button-primary" href="/start/">처음 시작하기</a><a class="button button-secondary" href="/editorial-policy/">편집 원칙 보기</a></div></div></section>
+<section class="section"><div class="container"><div class="section-heading"><div><span class="eyebrow">ONE CLEAR PURPOSE</span><h2>AI 결과물을 안전하게 쓰는 방법</h2><p>업무와 콘텐츠를 넓게 다루되, 작업 설계·검수·사람의 최종 판단이라는 한 가지 문제에 집중합니다.</p></div></div><div class="card-grid"><article class="pillar"><span>01 · WORK</span><h3>AI 업무 정리</h3><p>회의, 문서, 리서치와 반복 업무를 다룰 때 입력 자료를 정리하고 결과를 검토하는 방법을 안내합니다.</p></article><article class="pillar"><span>02 · CREATE</span><h3>AI 콘텐츠 제작</h3><p>글, 이미지, 영상, 음악 아이디어를 기획하고 사람의 경험과 편집 판단으로 완성하는 과정을 다룹니다.</p></article><article class="pillar"><span>03 · CONNECT</span><h3>통합 워크플로우</h3><p>아이디어를 업무 결과와 콘텐츠로 이어가되, 출처 확인과 최종 발행은 운영자가 책임지는 흐름을 설계합니다.</p></article></div></div></section>
+<section class="section"><div class="container"><div class="section-heading"><div><span class="eyebrow">START HERE</span><h2>먼저 읽을 실전 가이드</h2><p>예시는 작업 설계 템플릿입니다. 특정 AI 서비스의 성능이나 결과를 보장하지 않습니다.</p></div></div><div class="listing-grid">{guides.map((item) => <GuideCard {...item} />)}</div></div></section>
+<section class="section"><div class="container"><div class="notice-strip"><strong>운영 원칙:</strong> 독자가 활용할 수 있는 독창 가이드를 우선하며, AI 초안은 사람이 사실·권리·개인정보·표현을 확인합니다. 사이트 수익화는 AdSense만 검토하고 제휴·상품 유도 링크는 사용하지 않습니다.</div></div></section>
 </Base>

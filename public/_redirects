@@ -1,0 +1,10 @@
+/pulse /work/ 301
+/pulse/* /work/ 301
+/bookshelf /create/ 301
+/bookshelf/* /create/ 301
+/radar /workflow/ 301
+/radar/* /workflow/ 301
+/deepdive /workflow/ 301
+/deepdive/* /workflow/ 301
+/lab /workflow/ 301
+/lab/* /workflow/ 301

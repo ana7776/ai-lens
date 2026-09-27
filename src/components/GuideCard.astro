@@ -1,0 +1,8 @@
+---
+interface Props { href: string; category: string; title: string; description: string; meta?: string; }
+const { href, category, title, description, meta } = Astro.props;
+---
+<a class="guide-card" href={href}><span class="guide-card-category">{category}</span><h3>{title}</h3><p>{description}</p>{meta && <small>{meta}</small>}<span class="guide-card-arrow" aria-hidden="true">읽어보기 <span>→</span></span></a>
+<style>
+.guide-card{display:flex;flex-direction:column;min-height:240px;padding:24px;background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);transition:transform .18s,border-color .18s,box-shadow .18s}.guide-card:hover{transform:translateY(-3px);border-color:#9bb7d4;box-shadow:0 16px 34px rgba(21,45,77,.1)}.guide-card-category{font-size:12px;font-weight:800;color:var(--blue)}.guide-card h3{font-size:20px;line-height:1.45;letter-spacing:-.03em;margin:13px 0 9px}.guide-card p{font-size:14px;line-height:1.75;color:var(--muted)}.guide-card small{font-size:12px;color:#78879a;margin-top:12px}.guide-card-arrow{display:flex;justify-content:space-between;margin-top:auto;padding-top:24px;font-size:13px;font-weight:800;color:#193b62}.guide-card-arrow span{font-size:18px}@media(max-width:600px){.guide-card{min-height:0;padding:20px}.guide-card h3{font-size:18px}}
+</style>
