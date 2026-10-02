@@ -1,5 +1,6 @@
 ---
-import Base from '../../layouts/Base.astro';import GuideCard from '../../components/GuideCard.astro';
-const guides=[{href:'/workflow/weekly-pipeline/',category:'주간 운영',title:'혼자 운영하는 주간 콘텐츠 파이프라인',description:'기획부터 자료 확인, 초안, 편집, 발행까지 주간 단위로 나누는 운영안입니다.',meta:'사람 승인 단계 포함'},{href:'/workflow/review-checklist/',category:'검수·발행',title:'AI 작업 결과를 발행 전에 검수하기',description:'사실·출처·권리·개인정보·표현을 확인하는 마지막 검수 루프입니다.',meta:'최종 체크리스트'},{href:'/work/meeting-notes/',category:'업무 → 콘텐츠',title:'회의 기록에서 다음 행동을 정리하기',description:'AI에게 맡길 요약과 직접 확인할 약속·담당·기한을 구분합니다.',meta:'업무 정리'},{href:'/create/threads-to-blog/',category:'아이디어 → 글',title:'짧은 메모를 블로그 글로 발전시키기',description:'원문 경험을 보존하면서 SNS 메모와 긴 글의 역할을 다르게 설계합니다.',meta:'콘텐츠 재구성'}];
+import SectionIndex from '../../components/SectionIndex.astro';
 ---
-<Base title="AI 통합 워크플로우" description="AI 업무 처리와 1인 콘텐츠 제작을 기획·검수·발행의 한 흐름으로 연결하는 방법을 안내합니다."><section class="container"><header class="section-hero"><span class="eyebrow">WORKFLOW</span><h1>통합 워크플로우</h1><p>좋은 자동화는 발행을 무조건 자동으로 하는 것이 아니라, 반복 작업을 줄이면서 확인·승인·되돌리기를 남기는 설계입니다.</p></header><div class="listing-grid">{guides.map((item)=><GuideCard {...item}/>)}</div></section></Base>
+<SectionIndex section="workflow" title="AI 통합 워크플로우" eyebrow="WORKFLOW" heading="통합 워크플로우"
+  description="AI 업무 처리와 1인 콘텐츠 제작을 도구 선택·요청문 관리·검수·발행의 한 흐름으로 연결하는 방법을 안내합니다."
+  intro="좋은 운영 방식은 모든 것을 자동으로 처리하는 것이 아니라, 반복 작업을 줄이면서 확인·승인·되돌리기를 남기는 설계입니다." />

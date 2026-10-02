@@ -1,0 +1,21 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import GuideCard from './GuideCard.astro';
+import { guideHref, type SectionKey } from '../lib/sections';
+
+interface Props { section: SectionKey; title: string; eyebrow: string; heading: string; intro: string; note?: string; description: string; }
+const { section, title, eyebrow, heading, intro, note, description } = Astro.props;
+const guides = (await getCollection('guides', (g) => g.data.section === section)).sort((a, b) => a.data.order - b.data.order);
+---
+<Base title={title} description={description}>
+  <section class="container">
+    <header class="section-hero"><span class="eyebrow">{eyebrow}</span><h1>{heading}</h1><p>{intro}</p></header>
+    <p class="count">이 분야의 가이드 {guides.length}편</p>
+    <div class="listing-grid">
+      {guides.map((g) => <GuideCard href={guideHref(g.id)} category={g.data.label} title={g.data.title} description={g.data.description} meta={`업데이트 ${g.data.updated.toISOString().slice(0, 10)}`} />)}
+    </div>
+    {note && <div class="notice-strip">{note}</div>}
+  </section>
+</Base>
+<style>.count{font-size:13px;color:var(--muted);margin:0 0 14px;font-weight:700}</style>

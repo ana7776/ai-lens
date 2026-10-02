@@ -9,6 +9,11 @@
 - **통합 워크플로우**: 기획부터 사람의 최종 승인까지 이어지는 운영 과정
 - **운영 안내**: 소개, 편집 원칙, 문의, 개인정보처리방침
 
+## 글 추가 방법
+- 가이드는 `src/content/guides/{work|create|workflow}/슬러그.md`에 마크다운으로 작성합니다.
+- 주소는 파일 위치 그대로 `/work/슬러그/`가 됩니다. 목록·홈의 최근 글·RSS·사이트맵은 자동 반영됩니다.
+- 앞부분(frontmatter)에 title, description, section, label, order, published, updated, summary(3줄), related(2개 이상)를 채웁니다. 형식이 틀리면 빌드가 멈춰서 실수를 막아 줍니다.
+
 ## 원칙
 - 사이트의 수익화 목표는 Google AdSense만이며, 제휴 링크·상품 유도·협찬 콘텐츠를 사용하지 않습니다.
 - 운영자가 확인하지 않은 경험·성과·도구 기능을 사실처럼 쓰지 않습니다.
@@ -34,5 +39,5 @@ npm run preview
 
 Cloudflare Pages 프로젝트에 GitHub 저장소를 연결하면 `main` 변경을 빌드할 수 있습니다. 실제 배포 및 도메인 활성화 전에는 Pages 프로젝트, DNS와 HTTPS를 확인합니다.
 
-## 문의 메일
-`anagim7776@gmail.com`을 사용하려면 실제 수신 가능한 메일함 또는 별칭을 먼저 설정해야 합니다. 동작 확인 전에는 공개 안내에서 이 주소를 사용하지 않도록 점검하세요.
+## AdSense 코드 연결
+Cloudflare Pages > 설정 > 환경 변수에 `PUBLIC_ADSENSE_CLIENT=ca-pub-XXXXXXXXXXXXXXXX`(본인 게시자 ID)를 추가하고 다시 배포하면 모든 페이지 head에 AdSense 코드와 계정 메타 태그가 들어갑니다. 승인 후에는 `public/ads.txt`에 `google.com, pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0`을 넣어 배포합니다.

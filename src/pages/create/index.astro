@@ -1,5 +1,7 @@
 ---
-import Base from '../../layouts/Base.astro';import GuideCard from '../../components/GuideCard.astro';
-const guides=[{href:'/create/threads-to-blog/',category:'글·SNS',title:'짧은 메모를 블로그 초안으로 확장하기',description:'메모를 반복해 늘리지 않고, 독자의 질문과 작성자의 실제 맥락을 더해 글을 구성합니다.',meta:'메모 → 블로그'},{href:'/create/visual-brief/',category:'이미지·디자인',title:'AI 이미지 제작 전 브리프 만들기',description:'용도, 구도, 여백, 금지 요소를 먼저 정해 결과물을 검수할 기준을 만듭니다.',meta:'제작 전 체크리스트'},{href:'/create/ai-music-brief/',category:'음악·영상',title:'AI 음악 생성 전에 브리프 만들기',description:'영상 용도, 분위기, 구성, 피하고 싶은 요소를 먼저 정리하고 사용 조건을 확인합니다.',meta:'권리 확인 포함'},{href:'/workflow/weekly-pipeline/',category:'콘텐츠 운영',title:'혼자 운영하는 주간 콘텐츠 파이프라인',description:'아이디어 수집, 제작, 편집, 발행을 나누고 사람의 최종 승인을 유지합니다.',meta:'주간 운영 설계'}];
+import SectionIndex from '../../components/SectionIndex.astro';
 ---
-<Base title="AI 콘텐츠 제작 가이드" description="1인 크리에이터가 AI를 활용해 글과 음악·영상 아이디어를 기획·제작·검수하는 과정을 안내합니다."><section class="container"><header class="section-hero"><span class="eyebrow">AI CREATE</span><h1>AI 콘텐츠 제작</h1><p>AI로 만든 결과물은 초안 또는 재료입니다. 창작자의 관점, 실제 사례, 권리 확인과 편집이 더해져야 독자에게 가치 있는 콘텐츠가 됩니다.</p></header><div class="listing-grid">{guides.map((item)=><GuideCard {...item}/>)}</div><div class="notice-strip">생성형 콘텐츠를 공개하거나 수익화하기 전에 사용 도구의 최신 약관, 상업적 이용 범위, 저작권·초상권·음원 권리를 확인하세요.</div></section></Base>
+<SectionIndex section="create" title="AI 콘텐츠 제작 가이드" eyebrow="AI CREATE" heading="AI 콘텐츠 제작"
+  description="1인 크리에이터가 AI를 활용해 글·이미지·음악·영상을 기획하고 제작·검수하는 과정을 안내합니다."
+  intro="AI로 만든 결과물은 초안이자 재료입니다. 만드는 사람의 관점과 실제 사례, 권리 확인과 편집이 더해져야 독자에게 가치 있는 콘텐츠가 됩니다."
+  note="생성형 콘텐츠를 공개하거나 수익화하기 전에 사용한 도구의 최신 약관, 상업적 이용 범위, 저작권·초상권·음원 권리를 확인하세요." />

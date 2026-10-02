@@ -1,17 +1,21 @@
 ---
 import '../styles/global.css';
-interface Props { title: string; description?: string; }
-const { title, description = '혼자 일하는 직장인과 1인 크리에이터를 위한 AI 업무·콘텐츠 제작 워크플로우 가이드.' } = Astro.props;
+interface Props { title: string; description?: string; type?: 'website' | 'article'; }
+const { title, description = '혼자 일하는 직장인과 1인 크리에이터를 위한 AI 도구 실전 활용 가이드.', type = 'website' } = Astro.props;
+// AdSense 게시자 ID(예: ca-pub-1234567890123456). Cloudflare Pages 환경 변수 PUBLIC_ADSENSE_CLIENT에 넣으면 코드가 삽입됩니다.
+const adsenseClient = import.meta.env.PUBLIC_ADSENSE_CLIENT;
 const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site).href : Astro.url.href;
 ---
 <!doctype html>
 <html lang="ko"><head>
 <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>{title} | AI렌즈 Work</title><meta name="description" content={description} /><link rel="canonical" href={canonical} />
-<meta property="og:type" content="website" /><meta property="og:title" content={title + ' | AI렌즈 Work'} /><meta property="og:description" content={description} /><meta property="og:url" content={canonical} /><meta name="robots" content="index,follow" /><meta name="theme-color" content="#142d4e" />
+<meta property="og:type" content={type} /><meta property="og:site_name" content="AI렌즈 Work" /><meta property="og:locale" content="ko_KR" /><meta property="og:title" content={title + ' | AI렌즈 Work'} /><meta property="og:description" content={description} /><meta property="og:url" content={canonical} /><meta name="robots" content="index,follow" /><meta name="theme-color" content="#142d4e" />
 <link rel="alternate" type="application/rss+xml" title="AI렌즈 Work RSS" href="/rss.xml" />
 <script type="application/ld+json" set:html={JSON.stringify({ '@context':'https://schema.org', '@type':'WebSite', name:'AI렌즈 Work', url:Astro.site?.toString() ?? Astro.url.origin, description })}></script>
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+{adsenseClient && <meta name="google-adsense-account" content={adsenseClient} />}
+{adsenseClient && <script async src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${adsenseClient}`} crossorigin="anonymous"></script>}
 </head><body>
 <a class="skip-link" href="#main">본문 바로가기</a>
 <header class="site-header"><div class="container header-inner">
